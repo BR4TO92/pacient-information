@@ -68,19 +68,19 @@ public class PacientService {
 		return pacientRepository.save(new Pacient(id, name, age, sex));
 	}
 
-	public Pacient create(Map<String, String> newPacient) {
-		int id = Integer.parseInt(newPacient.get("id"));
-		String name = newPacient.get("name");
-		int age = Integer.parseInt(newPacient.get("age"));
-		String sex = newPacient.get("sex");
+	public Pacient create(PacientDTO newPacient) {
+		int id = newPacient.getId();
+		String name = newPacient.getName();
+		int age = newPacient.getAge();
+		String sex = newPacient.getSex();
 
 		return pacientRepository.save(new Pacient(id, name, age, sex));
 	}
 
-	public Pacient update(String name, Map<String, String> pacient){
-		String newName = pacient.get("name");
-		int newAge = Integer.parseInt(pacient.get("age"));
-		String newSex = pacient.get("sex");
+	public Pacient update(String name, PacientDTO pacient){
+		String newName = pacient.getName();
+		int newAge = pacient.getAge();
+		String newSex = pacient.getSex();
 		Pacient existentPacient = pacientRepository.findByName(name);
 		existentPacient.setName(newName);
 		existentPacient.setAge(newAge);

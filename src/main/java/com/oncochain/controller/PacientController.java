@@ -1,5 +1,6 @@
 package com.oncochain.controller;
 
+import com.oncochain.dto.PacientDTO;
 import com.oncochain.model.Pacient;
 import com.oncochain.repository.PacientRepository;
 import com.oncochain.service.PacientService;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class PacientController {
 
 	@Autowired
@@ -44,13 +46,13 @@ public class PacientController {
 	}
 
 	@PostMapping("/newPacient")
-	public Pacient create(@RequestBody Map<String, String> newPacient) {
+	public Pacient create(@RequestBody PacientDTO newPacient) {
 
 		return pacientService.create(newPacient);
 	}
 
 	@PutMapping("/pacient/{name}")
-	public Pacient update(@PathVariable String name, @RequestBody Map<String, String> pacient){
+	public Pacient update(@PathVariable String name, @RequestBody PacientDTO pacient){
 
 		return pacientService.update(name, pacient);
 	}

@@ -1,0 +1,48 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #pacientForm="ngForm">
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input type="text" [(ngModel)]="pacient.id"
+               class="form-control"
+               id="id"
+               name="id"
+               placeholder="Enter pacient id"
+               required #id="ngModel">
+      </div>
+      <div [hidden]="!id.pristine" class="alert alert-danger">Id is required</div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="pacient.name"
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Enter pacient name"
+               required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" [(ngModel)]="pacient.age"
+               class="form-control"
+               id="age"
+               name="age"
+               placeholder="Enter pacient age"
+               required #age="ngModel">
+      </div>
+      <div [hidden]="!age.pristine" class="alert alert-danger">Age is required</div>
+      <div class="form-group">
+        <label for="sex">Sex</label>
+        <input type="text" [(ngModel)]="pacient.sex"
+               class="form-control"
+               id="sex"
+               name="sex"
+               placeholder="Enter pacient sex"
+               required #sex="ngModel">
+        <div [hidden]="!sex.pristine" class="alert alert-danger">Pacient's sex is required</div>
+      </div>
+      <button type="submit" [disabled]="!pacientForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
