@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oncochain.dto.PacientDTO;
 import com.oncochain.model.Pacient;
 import com.oncochain.repository.PacientRepository;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +18,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 @Service
 @Transactional
@@ -38,8 +41,21 @@ public class PacientService {
 
 	public Pacient create(MultipartFile document, String newPacient) throws IOException{
 		if(!document.isEmpty()) {
-			File file = new File(document.getOriginalFilename());
-			System.out.println(file.getName());
+			PDDocument pdfDocument = PDDocument.load(document.getInputStream());
+
+			if (pdfDocument.isEncrypted()) {
+				System.out.println("The document is encrypted and cannot be read.");
+			}
+			else {
+				PDFTextStripper pdfTextStripper = new PDFTextStripper();
+				String text = pdfTextStripper.getText(pdfDocument);
+				Scanner scanner = new Scanner(text);
+				String firstWord = scanner.next();
+
+				System.out.println("First word from pdf is: " + firstWord);
+			}
+
+			pdfDocument.close();
 		}
 
 		ObjectMapper mapper = new ObjectMapper();
