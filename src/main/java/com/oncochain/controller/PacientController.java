@@ -6,7 +6,9 @@ import com.oncochain.service.PacientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +21,7 @@ public class PacientController {
 
 	@RequestMapping("/")
 	public String index() {
+
 		return "Hello from PacientController.java";
 	}
 
@@ -35,7 +38,13 @@ public class PacientController {
 	}
 
 	@PostMapping("/pacient")
-	public Pacient create(@RequestBody Map<String, String> newPacient){
+	public Pacient create(@RequestParam("document") MultipartFile document, @RequestParam String newPacient) throws IOException {
+
+		return pacientService.create(document, newPacient);
+	}
+
+	@PostMapping("/newPacient")
+	public Pacient create(@RequestBody Map<String, String> newPacient) {
 
 		return pacientService.create(newPacient);
 	}
