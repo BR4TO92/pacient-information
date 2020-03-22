@@ -40,6 +40,8 @@ public class PacientService {
 	}
 
 	public Pacient create(MultipartFile document, String newPacient) throws IOException{
+		String sex = "";
+
 		if(!document.isEmpty()) {
 			PDDocument pdfDocument = PDDocument.load(document.getInputStream());
 
@@ -49,10 +51,9 @@ public class PacientService {
 			else {
 				PDFTextStripper pdfTextStripper = new PDFTextStripper();
 				String text = pdfTextStripper.getText(pdfDocument);
-				Scanner scanner = new Scanner(text);
-				String firstWord = scanner.next();
-
-				System.out.println("First word from pdf is: " + firstWord);
+				String[] lines = text.split("\\n");
+				String[] desiredLine = lines[7].split(" ");
+				sex = desiredLine[1];
 			}
 
 			pdfDocument.close();
@@ -64,23 +65,26 @@ public class PacientService {
 		String name = pacientDTO.getName();
 		int age = pacientDTO.getAge();
 
-		return pacientRepository.save(new Pacient(id, name, age));
+		return pacientRepository.save(new Pacient(id, name, age, sex));
 	}
 
 	public Pacient create(Map<String, String> newPacient) {
 		int id = Integer.parseInt(newPacient.get("id"));
 		String name = newPacient.get("name");
 		int age = Integer.parseInt(newPacient.get("age"));
+		String sex = newPacient.get("sex");
 
-		return pacientRepository.save(new Pacient(id, name, age));
+		return pacientRepository.save(new Pacient(id, name, age, sex));
 	}
 
 	public Pacient update(String name, Map<String, String> pacient){
 		String newName = pacient.get("name");
 		int newAge = Integer.parseInt(pacient.get("age"));
+		String newSex = pacient.get("sex");
 		Pacient existentPacient = pacientRepository.findByName(name);
 		existentPacient.setName(newName);
 		existentPacient.setAge(newAge);
+		existentPacient.setSex(newSex);
 
 		return pacientRepository.save(existentPacient);
 	}
