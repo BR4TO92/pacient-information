@@ -2,8 +2,10 @@ package com.oncochain.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "pacients")
 public class Pacient {
 
 	@Id
