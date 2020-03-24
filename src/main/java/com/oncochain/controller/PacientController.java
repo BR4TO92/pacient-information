@@ -40,21 +40,21 @@ public class PacientController {
 	}
 
 	@PostMapping("/pacient")
-	public Pacient create(@RequestParam("document") MultipartFile document, @RequestParam String newPacient) throws IOException {
+	public Pacient create(@RequestPart("pacientFile") MultipartFile pacientFile, @RequestPart("newPacient") PacientDTO pacientDTO) throws IOException {
 
-		return pacientService.create(document, newPacient);
+		return pacientService.create(pacientFile, pacientDTO);
 	}
 
 	@PostMapping("/newPacient")
-	public Pacient create(@RequestBody PacientDTO newPacient) {
+	public Pacient create(@RequestBody PacientDTO pacientDTO) {
 
-		return pacientService.create(newPacient);
+		return pacientService.create(pacientDTO);
 	}
 
 	@PutMapping("/pacient/{name}")
-	public Pacient update(@PathVariable String name, @RequestBody PacientDTO pacient){
+	public Pacient update(@PathVariable String name, @RequestBody PacientDTO pacientDTO){
 
-		return pacientService.update(name, pacient);
+		return pacientService.update(name, pacientDTO);
 	}
 
 	@DeleteMapping("pacient/{name}")

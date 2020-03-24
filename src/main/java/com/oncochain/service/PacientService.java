@@ -39,11 +39,11 @@ public class PacientService {
 		return pacientRepository.findByName(name);
 	}
 
-	public Pacient create(MultipartFile document, String newPacient) throws IOException{
+	public Pacient create(MultipartFile pacientFile, PacientDTO pacientDTO) throws IOException{
 		String sex = "";
 
-		if(!document.isEmpty()) {
-			PDDocument pdfDocument = PDDocument.load(document.getInputStream());
+		if(!pacientFile.isEmpty()) {
+			PDDocument pdfDocument = PDDocument.load(pacientFile.getInputStream());
 
 			if (pdfDocument.isEncrypted()) {
 				System.out.println("The document is encrypted and cannot be read.");
@@ -59,8 +59,6 @@ public class PacientService {
 			pdfDocument.close();
 		}
 
-		ObjectMapper mapper = new ObjectMapper();
-		PacientDTO pacientDTO = mapper.readValue(newPacient, PacientDTO.class);
 		int id = pacientDTO.getId();
 		String name = pacientDTO.getName();
 		int age = pacientDTO.getAge();
@@ -68,19 +66,19 @@ public class PacientService {
 		return pacientRepository.save(new Pacient(id, name, age, sex));
 	}
 
-	public Pacient create(PacientDTO newPacient) {
-		int id = newPacient.getId();
-		String name = newPacient.getName();
-		int age = newPacient.getAge();
-		String sex = newPacient.getSex();
+	public Pacient create(PacientDTO pacientDTO) {
+		int id = pacientDTO.getId();
+		String name = pacientDTO.getName();
+		int age = pacientDTO.getAge();
+		String sex = pacientDTO.getSex();
 
 		return pacientRepository.save(new Pacient(id, name, age, sex));
 	}
 
-	public Pacient update(String name, PacientDTO pacient){
-		String newName = pacient.getName();
-		int newAge = pacient.getAge();
-		String newSex = pacient.getSex();
+	public Pacient update(String name, PacientDTO pacientDTO){
+		String newName = pacientDTO.getName();
+		int newAge = pacientDTO.getAge();
+		String newSex = pacientDTO.getSex();
 		Pacient existentPacient = pacientRepository.findByName(name);
 		existentPacient.setName(newName);
 		existentPacient.setAge(newAge);
