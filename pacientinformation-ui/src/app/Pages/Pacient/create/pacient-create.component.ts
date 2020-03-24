@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Pacient} from "../pacient";
 import {ActivatedRoute, Router} from "@angular/router";
-import {PacientService} from "../pacient.service";
+import {PacientCreateService} from "./pacient-create.service";
 
 @Component({
   selector: 'app-pacient-form',
@@ -13,7 +13,7 @@ export class PacientCreateComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private pacientService: PacientService) {
+              private pacientCreateService: PacientCreateService) {
     this.pacient = new Pacient();
   }
 
@@ -21,7 +21,7 @@ export class PacientCreateComponent implements OnInit {
   }
 
   onSubmit() {
-    this.pacientService.save(this.pacient).subscribe((result) => this.goToPacientList());
+    this.pacientCreateService.save(this.pacient).subscribe((result) => this.goToPacientList());
   }
 
   goToPacientList() {

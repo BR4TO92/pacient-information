@@ -7,7 +7,7 @@ import { PacientOverviewComponent } from './Pages/Pacient/overview/pacient-overv
 import { PacientCreateComponent } from './Pages/Pacient/create/pacient-create.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
-import {PacientService} from "./Pages/Pacient/pacient.service";
+import {PacientOverviewService} from "./Pages/Pacient/overview/pacient-overview.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import {PacientService} from "./Pages/Pacient/pacient.service";
     HttpClientModule,
     FormsModule
   ],
-  providers: [PacientService],
+  providers: [PacientOverviewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

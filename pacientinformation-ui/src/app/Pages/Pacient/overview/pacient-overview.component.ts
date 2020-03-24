@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Pacient} from "../pacient";
-import {PacientService} from "../pacient.service";
+import {PacientOverviewService} from "./pacient-overview.service";
 
 @Component({
   selector: 'app-pacient-list',
@@ -10,10 +10,10 @@ import {PacientService} from "../pacient.service";
 export class PacientOverviewComponent implements OnInit {
   pacients: Pacient[];
 
-  constructor(private pacientService: PacientService) { }
+  constructor(private pacientOverviewService: PacientOverviewService) { }
 
   ngOnInit(): void {
-    this.pacientService.findAll().subscribe((data) => {
+    this.pacientOverviewService.findAll().subscribe((data) => {
       this.pacients = data;
     });
   }
