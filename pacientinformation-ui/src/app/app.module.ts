@@ -3,17 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PacientListComponent } from './pacient-list/pacient-list.component';
-import { PacientFormComponent } from './pacient-form/pacient-form.component';
+import { PacientOverviewComponent } from './Pages/Pacient/overview/pacient-overview.component';
+import { PacientCreateComponent } from './Pages/Pacient/create/pacient-create.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
-import {PacientServiceService} from "./pacient-service.service";
+import {PacientService} from "./Pages/Pacient/pacient.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    PacientListComponent,
-    PacientFormComponent
+    PacientOverviewComponent,
+    PacientCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +21,7 @@ import {PacientServiceService} from "./pacient-service.service";
     HttpClientModule,
     FormsModule
   ],
-  providers: [PacientServiceService],
+  providers: [PacientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

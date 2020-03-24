@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PacientListComponent} from "./pacient-list/pacient-list.component";
-import {PacientFormComponent} from "./pacient-form/pacient-form.component";
+import {PacientOverviewComponent} from "./Pages/Pacient/overview/pacient-overview.component";
+import {PacientCreateComponent} from "./Pages/Pacient/create/pacient-create.component";
 
 
 const routes: Routes = [
-  { path: 'pacients', component: PacientListComponent },
-  { path: 'addPacient', component: PacientFormComponent }
+  { path: 'pacients', component: PacientOverviewComponent },
+  { path: 'addPacient', component: PacientCreateComponent }
 ];
 
 @NgModule({

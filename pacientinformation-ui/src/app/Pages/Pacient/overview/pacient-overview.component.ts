@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {Pacient} from "../pacient";
-import {PacientServiceService} from "../pacient-service.service";
+import {PacientService} from "../pacient.service";
 
 @Component({
   selector: 'app-pacient-list',
-  templateUrl: './pacient-list.component.html',
-  styleUrls: ['./pacient-list.component.scss']
+  templateUrl: './pacient-overview.component.html',
+  styleUrls: ['./pacient-overview.component.scss']
 })
-export class PacientListComponent implements OnInit {
+export class PacientOverviewComponent implements OnInit {
   pacients: Pacient[];
 
-  constructor(private pacientService: PacientServiceService) { }
+  constructor(private pacientService: PacientService) { }
 
   ngOnInit(): void {
     this.pacientService.findAll().subscribe((data) => {
