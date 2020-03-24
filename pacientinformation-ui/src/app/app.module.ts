@@ -8,6 +8,7 @@ import { PacientCreateComponent } from './Pages/Pacient/create/pacient-create.co
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {PacientOverviewService} from "./Pages/Pacient/overview/pacient-overview.service";
+import {Angular2PromiseButtonModule} from 'angular2-promise-buttons/';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {PacientOverviewService} from "./Pages/Pacient/overview/pacient-overview.
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    Angular2PromiseButtonModule.forRoot()
   ],
   providers: [PacientOverviewService],
   bootstrap: [AppComponent]
