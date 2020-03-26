@@ -11,6 +11,7 @@ import {PacientOverviewService} from "./Pages/Pacient/overview/pacient-overview.
 import {Angular2PromiseButtonModule} from 'angular2-promise-buttons/';
 import { TextInputComponent } from './Components/Forms/text-input/text-input.component';
 import { FileInputComponent } from './Components/Forms/file-input/file-input.component';
+import { MenuComponent } from './Components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FileInputComponent } from './Components/Forms/file-input/file-input.com
     PacientOverviewComponent,
     PacientCreateComponent,
     TextInputComponent,
-    FileInputComponent
+    FileInputComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
