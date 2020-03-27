@@ -12,10 +12,11 @@ import {Angular2PromiseButtonModule} from 'angular2-promise-buttons/';
 import { TextInputComponent } from './Components/Forms/text-input/text-input.component';
 import { FileInputComponent } from './Components/Forms/file-input/file-input.component';
 import { MenuComponent } from './Components/menu/menu.component';
-import { LoginComponent } from './Pages/Login/login/login.component';
-import { LogoutComponent } from './Pages/logout/logout.component';
-import {HttpInterceptorService} from "./Pages/Login/http-interceptor.service";
-import {AuthenticationService} from "./Pages/Login/authentication.service";
+import { LoginComponent } from './Components/authentication/login/login.component';
+import { LogoutComponent } from './Components/authentication/logout/logout.component';
+import {AuthenticationService} from "./Components/authentication/authentication.service";
+import {HttpInterceptorService} from "./Components/authentication/http-interceptor.service";
+import { CheckboxComponent } from './Components/Forms/checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {AuthenticationService} from "./Pages/Login/authentication.service";
     FileInputComponent,
     MenuComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,
