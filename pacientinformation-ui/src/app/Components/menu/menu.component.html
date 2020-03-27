@@ -1,8 +1,8 @@
-<header>
+<header *ngIf="isLoggedIn">
   <nav class="navbar navbar-dark bg-dark">
     <div><a href="https://www.oncochain.com/" class="navbar-brand">OncoChain</a></div>
     <ul class="navbar-nav navbar-right">
-      <li><a class="nav-link" href="/addPacient">Add Pacient Tab</a></li>
+      <li><a class="nav-link" href="/logout" (click)=doLogout()>Logout</a></li>
     </ul>
   </nav>
 </header>

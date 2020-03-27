@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,11 @@ public class PacientController {
 	public String index() {
 
 		return "Hello from PacientController.java";
+	}
+
+	@GetMapping("/auth")
+	public Principal user(Principal user) {
+		return user;
 	}
 
 	@GetMapping("/pacients")
