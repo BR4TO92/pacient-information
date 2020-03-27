@@ -1,38 +1,44 @@
 <app-menu></app-menu>
-<div class="card my-5">
-  <div class="card-body">
-    <form (ngSubmit)="onSubmit()" [formGroup]="pacientForm">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card my-5">
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()" [formGroup]="pacientForm">
 
-      <app-text-input [type]="'number'"
-                     [label]="'Id'"
-                     [name]="'id'"
-                     [model]="pacient.id"
-                     [controlName]="'id'"
-                     [group]="pacientForm">
-      </app-text-input>
+            <app-text-input [type]="'number'"
+                            [label]="'Id'"
+                            [name]="'id'"
+                            [model]="pacient.id"
+                            [controlName]="'id'"
+                            [group]="pacientForm">
+            </app-text-input>
 
-      <app-text-input [label]="'Name'"
-                     [name]="'name'"
-                     [model]="pacient.name"
-                     [controlName]="'name'"
-                     [group]="pacientForm">
-      </app-text-input>
+            <app-text-input [label]="'Name'"
+                            [name]="'name'"
+                            [model]="pacient.name"
+                            [controlName]="'name'"
+                            [group]="pacientForm">
+            </app-text-input>
 
-      <app-text-input [type]="'number'"
-                     [label]="'Age'"
-                     [name]="'age'"
-                     [model]="pacient.age"
-                     [controlName]="'age'"
-                     [group]="pacientForm">
-      </app-text-input>
+            <app-text-input [type]="'number'"
+                            [label]="'Age'"
+                            [name]="'age'"
+                            [model]="pacient.age"
+                            [controlName]="'age'"
+                            [group]="pacientForm">
+            </app-text-input>
 
-      <app-file-input [label]="'Sex'"
-                          [name]="'pacientFile'"
-                          [group]="pacientForm"
-                          [controlName]="'pacientFile'"></app-file-input>
+            <app-file-input [label]="'Sex'"
+                            [name]="'pacientFile'"
+                            [group]="pacientForm"
+                            [controlName]="'pacientFile'"></app-file-input>
 
-      <button [promiseBtn]="submitPromise"
-              class="btn btn-info">Submit</button>
-    </form>
+            <button [promiseBtn]="submitPromise"
+                    class="btn btn-info">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
