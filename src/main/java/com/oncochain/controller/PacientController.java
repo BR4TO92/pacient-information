@@ -5,6 +5,7 @@ import com.oncochain.model.Pacient;
 import com.oncochain.repository.PacientRepository;
 import com.oncochain.service.PacientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -45,7 +46,7 @@ public class PacientController {
 		return pacientService.getByName(name);
 	}
 
-	@PostMapping("/pacient")
+	@PostMapping(value = "/pacient", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
 	public Pacient create(@RequestPart("pacientFile") MultipartFile pacientFile, @RequestPart("newPacient") PacientDTO pacientDTO) throws IOException {
 
 		return pacientService.create(pacientFile, pacientDTO);
