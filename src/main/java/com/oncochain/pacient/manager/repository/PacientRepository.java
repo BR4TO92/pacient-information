@@ -1,10 +1,8 @@
-package com.oncochain.repository;
+package com.oncochain.pacient.manager.repository;
 
-import com.oncochain.model.Pacient;
+import com.oncochain.pacient.manager.model.Pacient;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface PacientRepository extends CrudRepository<Pacient, Integer> {

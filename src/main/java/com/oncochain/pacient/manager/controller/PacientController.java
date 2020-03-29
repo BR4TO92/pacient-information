@@ -1,20 +1,16 @@
-package com.oncochain.controller;
+package com.oncochain.pacient.manager.controller;
 
-import com.oncochain.dto.PacientDTO;
-import com.oncochain.model.Pacient;
-import com.oncochain.repository.PacientRepository;
-import com.oncochain.service.PacientService;
+import com.oncochain.pacient.manager.dto.PacientDTO;
+import com.oncochain.pacient.manager.model.Pacient;
+import com.oncochain.pacient.manager.service.PacientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
