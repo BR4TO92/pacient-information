@@ -4,4 +4,5 @@ export class Pacient {
   name: string;
   age: number;
   sex: string;
+  smokingStatus: string;
 }

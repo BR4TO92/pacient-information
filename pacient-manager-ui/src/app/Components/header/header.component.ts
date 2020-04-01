@@ -3,11 +3,11 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticationService} from "../authentication/authentication.service";
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class MenuComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   isLoggedIn = false;
 
   constructor(

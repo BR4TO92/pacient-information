@@ -1,0 +1,9 @@
+<div class="form-group row">
+  <label class="col-sm-4 col-form-label">{{label}}</label>
+  <div class="col-sm-2" *ngFor="let option of options">
+    <input class="input-sm" (change)="onChangeOption(option, $event.target.checked)" name="{{ option }}" [checked]="selectedValue === option" type="checkbox" id="{{option}}" >
+    <label class="form-check-label" for="{{option}}">
+      {{option}}
+    </label>
+  </div>
+</div>

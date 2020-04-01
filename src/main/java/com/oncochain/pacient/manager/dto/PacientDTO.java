@@ -7,6 +7,8 @@ public class PacientDTO {
 	private int age;
 	private String sex;
 
+	private String smokingStatus;
+
 	public int getId() {
 		return id;
 	}
@@ -34,4 +36,8 @@ public class PacientDTO {
 	public String getSex() { return sex; }
 
 	public void setSex(String sex) { this.sex = sex; }
+
+	public String getSmokingStatus() { return smokingStatus; }
+
+	public void setSmokingStatus(String smokingStatus) { this.smokingStatus = smokingStatus; }
 }

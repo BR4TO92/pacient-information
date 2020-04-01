@@ -23,4 +23,10 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="structural-2.1" author="daniel.bratosin">
+        <addColumn tableName="pacients">
+            <column name="smoking_status" type="VARCHAR(25)"/>
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>

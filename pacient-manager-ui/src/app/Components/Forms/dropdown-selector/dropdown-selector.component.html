@@ -1,0 +1,8 @@
+<div class="form-group row" [formGroup]="group">
+  <label class="col-sm-4 col-form-label">{{label}}</label>
+  <div class="col-sm-8">
+    <select class="form-control custom-select" id="{{name}}" name="{{name}}" [formControlName]="controlName">
+      <ng-content></ng-content>
+    </select>
+  </div>
+</div>

@@ -1,10 +1,11 @@
-<app-menu></app-menu>
+<app-header></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <div class="card my-5">
         <div class="card-body">
           <form (ngSubmit)="onSubmit()" [formGroup]="pacientForm">
+            <app-back-button></app-back-button>
 
             <app-text-input [type]="'number'"
                             [label]="'Id'"
@@ -23,16 +24,24 @@
 
             <app-text-input [type]="'number'"
                             [label]="'Age'"
-                            [name]="'age'"
+                            [name]="'pula'"
                             [model]="pacient.age"
                             [controlName]="'age'"
                             [group]="pacientForm">
             </app-text-input>
 
+            <app-checkbox-single-value [label]="'Smoking'"
+                                       [options]=smokinkgOptions
+                                       [(selectedValue)]=selectedValue>
+            </app-checkbox-single-value>
+
             <app-file-input [label]="'Sex'"
                             [name]="'pacientFile'"
                             [group]="pacientForm"
-                            [controlName]="'pacientFile'"></app-file-input>
+                            [controlName]="'pacientFile'">
+            </app-file-input>
+
+            selectedValue = {{ selectedValue }}
 
             <button [promiseBtn]="submitPromise"
                     class="btn btn-info">Submit</button>

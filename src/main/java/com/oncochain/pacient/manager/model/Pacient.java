@@ -1,5 +1,6 @@
 package com.oncochain.pacient.manager.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -14,19 +15,24 @@ public class Pacient {
 	private int age;
 	private String sex;
 
+	@Column(name = "smoking_status")
+	private String smokingStatus;
+
 	public Pacient() {}
 
-	public Pacient(String name, int age, String sex) {
+	public Pacient(String name, int age, String sex, String smokingStatus) {
 		this.name = name;
 		this.age = age;
 		this.sex = sex;
+		this.smokingStatus = smokingStatus;
 	}
 
-	public Pacient(int id, String name, int age, String sex) {
+	public Pacient(int id, String name, int age, String sex, String smokingStatus) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.sex = sex;
+		this.smokingStatus = smokingStatus;
 	}
 
 	public int getId() {
@@ -56,4 +62,8 @@ public class Pacient {
 	public String getSex() { return sex; }
 
 	public void setSex(String sex) { this.sex = sex; }
+
+	public String getSmokingStatus() { return smokingStatus; }
+
+	public void setSmokingStatus(String smokingStatus) { this.smokingStatus = smokingStatus; }
 }

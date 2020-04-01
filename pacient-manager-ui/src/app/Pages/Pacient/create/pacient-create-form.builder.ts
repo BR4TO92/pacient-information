@@ -1,4 +1,4 @@
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 
 export class PacientCreateFormBuilder {
 
@@ -7,6 +7,7 @@ export class PacientCreateFormBuilder {
       id: new FormControl('', []),
       name: new FormControl('', []),
       age: new FormControl('', []),
+      smokingStatus: new FormControl('', []),
       pacientFile: new FormControl('', [])
     });
   }
