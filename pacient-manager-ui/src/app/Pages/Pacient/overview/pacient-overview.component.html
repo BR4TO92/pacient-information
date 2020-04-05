@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="container">
+<!--<div class="container">
   <div class="row">
     <div class="col-md-12">
       <div class="card my-5">
@@ -28,4 +28,66 @@
       </div>
     </div>
   </div>
+</div>-->
+
+<div [@routerTransition] #rootdiv class="hosttable">
+  <table
+    class="table table-hover patients-filter-table">
+    <!--infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"-->
+
+    <tbody>
+    <tr
+      #tablerow
+      *ngFor="let pacient of pacients"
+      class="align-middle text-center"
+    >
+      <td>
+        <h4 class="very-important-text">
+          {{ pacient.name }}
+        </h4>
+      </td>
+      <td>
+        <!--{{ Age }}-->
+        <span>{{ pacient.age }}</span>
+      </td>
+      <td>
+        <!--<div>{{ ID }}</div>-->
+        <div class="themed-text">
+          {{ pacient.id }}
+        </div>
+      </td>
+      <!-- <td>
+         <div translate>{{ translationPrefix }}.secondaryInfo</div>
+         <div>{{ patient.secondaryInfo }}</div>
+       </td>-->
+      <td>
+        <!--<div>{{ Sex }}</div>-->
+        <div class="themed-text">
+          {{ pacient.sex }}
+        </div>
+        <!--<div *ngIf="patientType == 'treatment'" class="themed-text">
+          {{ patient.tertiaryInfo }}
+        </div>-->
+      </td>
+      <!--<td class="actions">
+        <button
+          class="btn btn-primary-vertical"
+          [routerLink]="[
+                  '.',
+                  'clinic',
+                  patient.clinicId,
+                  patient.caseNumber
+                ]"
+        >
+          <i class="fa fa-angle-right"></i>
+        </button>
+      </td>-->
+    </tr>
+    </tbody>
+  </table>
 </div>
+<button class="btn big-add-button not-implemented" (click)="goToCreatePacient()">
+  +
+</button>

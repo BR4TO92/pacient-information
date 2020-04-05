@@ -23,7 +23,7 @@ export class PacientCreateService {
       }
     );
 
-    return this.httpClient.post<Pacient>("http://localhost:8080/pacient", formData, {headers: headers})
+    return this.httpClient.post<Pacient>("http://localhost:8080/api/pacients", formData, {headers: headers})
       .toPromise();
   }
 }

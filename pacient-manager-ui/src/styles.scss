@@ -1,1 +1,264 @@
 /* You can add global styles to this file, and also import other style files */
+
+$primary: #bd10e0;
+$font-family-sans-serif: "Montserrat",
+"Open Sans",
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol";
+
+/*@import "bootstrap/bootstrap";
+@import "spinner";
+@import "utils";
+@import "rtl";
+@import "responsive";*/
+
+:root {
+  --background-color: #fafafa;
+  --panel-color: #fefeff;
+  --button-well-color: #efeff0;
+  --input-well-color: #fcfcfc;
+  --input-border-color: #ffffff;
+  --modal-background-color: #fdfdfe;
+  --regular-text-color: #999999;
+  --important-text-color: #666666;
+  --theme-color: #9013fe;
+  --theme-color-alternate: #d64cc9;
+  --button-text-color: #fff;
+  --button-theme-left-to-right: linear-gradient(90deg,
+    #961ef1,
+    #ae30e2,
+    #d146d8,
+    #e758c0,
+    #ee5dbc);
+  --button-theme-top-to-bottom: linear-gradient(0deg,
+    #961ef1,
+    #ae30e2,
+    #d146d8,
+    #e758c0,
+    #ee5dbc);
+  --general-padding: 1em;
+  --double-general-padding: 2em;
+  --minus-general-padding: calc(-1 * var(--general-padding));
+  --simple-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  --action-button-well-size: 6em;
+  --action-button-size: 4em;
+  --action-button-margin: 1em; // (--action-button-size - --action-button-size) / 2
+  --action-default-color: #f2f2f2;
+  --green: #34A853;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background-color);
+  color: var(--regular-text-color);
+}
+
+.not-implemented {
+  cursor: default !important;
+  opacity: 0.5;
+  filter: grayscale(100%);
+
+  &:focus {
+    outline: 0;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+%btn-primary {
+  color: var(--button-text-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-color: unset;
+
+  &:hover {
+    border-color: unset;
+  }
+
+  &:disabled {
+    border-color: unset;
+  }
+
+  & i {
+    font-size: 23px;
+    line-height: 12px;
+  }
+}
+
+.btn-primary {
+  @extend %btn-primary;
+  background: var(--button-theme-left-to-right);
+
+  &-vertical {
+    @extend %btn-primary;
+    background: var(--button-theme-top-to-bottom);
+  }
+}
+
+.btn-primary-plain {
+  @extend %btn-primary;
+  background: var(--theme-color);
+}
+
+.btn:disabled,
+.form-control:disabled {
+  cursor: not-allowed !important;
+}
+
+.not-so-important-text {
+  color: var(--regular-text-color);
+}
+
+.themed-text {
+  color: var(--theme-color);
+  font-weight: bold;
+}
+
+.themed-text-alternate {
+  color: var(--theme-color-alternate);
+  font-weight: bold;
+}
+
+.very-important-text {
+  color: var(--important-text-color);
+  font-weight: bold;
+}
+
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 50px;
+}
+
+.page-title {
+  background: var(--button-theme-left-to-right);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.slider-buttons {
+  width: 100%;
+  background: #f6f7f9;
+  box-shadow: inset 5px 5px var(--panel-color),
+  inset -5px -5px var(--panel-color), var(--simple-shadow);
+  border-radius: 0.25rem;
+
+  .background-track {
+    display: flex;
+    justify-content: space-between;
+    background: var(--button-theme-left-to-right);
+    background-clip: text;
+    isolation: isolate;
+
+    .btn-clipping {
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+      font-size: 1rem;
+
+      &.active {
+        color: var(--theme-color);
+        background-color: var(--panel-color);
+      }
+
+      &:not(.active) {
+        color: var(--theme-color-alternate);
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@media print {
+  .breadcrumb {
+    display: none !important;
+  }
+}
+
+.textnowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-no-lines.table {
+
+  th,
+  td {
+    border-top: unset;
+  }
+}
+
+.row.row-spaced {
+  margin-bottom: var(--general-padding);
+}
+
+.panel {
+  padding: var(--general-padding);
+  background: var(--panel-color);
+  box-shadow: inset 5px 5px var(--panel-color),
+  inset -5px -5px var(--panel-color), 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-picture-button {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  box-shadow: var(--simple-shadow);
+
+  &.small {
+    width: 3em;
+    height: 3em;
+  }
+
+  &.smallest {
+    width: 2em;
+    height: 2em;
+  }
+
+  &+* {
+    margin-left: var(--general-padding);
+  }
+}
+
+.split-view {
+  --side-detail-width: 30%;
+  display: flex;
+  padding: 0 !important;
+
+  > :first-child {
+    min-width: var(--side-detail-width);
+  }
+
+  .side-view {
+    min-width: var(--side-detail-width);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .main-view {
+    flex-grow: 1;
+    overflow-x: auto;
+  }
+}
+
+.is-dragging-files .dropzone {
+  border: 10px green dashed;
+  border-radius: 1em;
+}
+

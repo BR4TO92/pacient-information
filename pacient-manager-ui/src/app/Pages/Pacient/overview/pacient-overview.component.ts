@@ -21,7 +21,7 @@ export class PacientOverviewComponent implements OnInit {
   }
 
     goToCreatePacient() {
-        this.router.navigate(['/addPacient']);
+        this.router.navigate(['pacients/create']);
     }
 
 }

@@ -14,35 +14,31 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/api/pacients")
 public class PacientController {
 
 	@Autowired
 	private PacientService pacientService;
 
-	@RequestMapping("/")
+	@RequestMapping("/index")
 	public String index() {
 
 		return "Hello from PacientController.java";
 	}
 
-	@GetMapping("/auth")
-	public Principal user(Principal user) {
-		return user;
-	}
-
-	@GetMapping("/pacients")
+	@GetMapping()
 	public List<Pacient> get() {
 
 		return pacientService.get();
 	}
 
-	@GetMapping("/pacient/{name}")
+	@GetMapping("/{name}")
 	public Pacient getByName(@PathVariable String name){
 
 		return pacientService.getByName(name);
 	}
 
-	@PostMapping(value = "/pacient", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+	@PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
 	public Pacient create(@RequestPart("pacientFile") MultipartFile pacientFile, @RequestPart("newPacient") PacientDTO pacientDTO) throws IOException {
 
 		return pacientService.create(pacientFile, pacientDTO);

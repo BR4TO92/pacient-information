@@ -8,7 +8,7 @@ import {LogoutComponent} from "./Components/authentication/logout/logout.compone
 
 const routes: Routes = [
   { path: 'pacients', component: PacientOverviewComponent },
-  { path: 'addPacient', component: PacientCreateComponent },
+  { path: 'pacients/create', component: PacientCreateComponent },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'logout', component: LogoutComponent }

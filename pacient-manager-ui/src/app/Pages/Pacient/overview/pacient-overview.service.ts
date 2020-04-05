@@ -11,6 +11,6 @@ export class PacientOverviewService {
   constructor(private httpClient: HttpClient) { }
 
   public findAll(): Observable<Pacient[]> {
-    return this.httpClient.get<Pacient[]>('http://localhost:8080/pacients');
+    return this.httpClient.get<Pacient[]>('http://localhost:8080/api/pacients');
   }
 }
