@@ -56,40 +56,55 @@
       {{organisation}}
     </div>
   </div>
-  <div class="nav-item dropdown" ngbDropdown>
+
+  <nav class="navbar navbar-light bg-white">
+    <a class="navbar-brand" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-fw fa-angle-down"></i>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="logout">Logout</a>
+    </div>
+
+  </nav>
+
+
+  <!--<div class="nav-item dropdown" ngbDropdown>
   <a
     href="logout"
     class="nav-link remove-dropdown-toggle"
   >
-    <!--<img class="profile-picture-button" [src]="pic" />-->
+    &lt;!&ndash;<img class="profile-picture-button" [src]="pic" />&ndash;&gt;
     <i class="fa fa-fw fa-angle-down"></i>
   </a>
 
   <div class="dropdown-menu" ngbDropdownMenu>
-    <!--<a
+    &lt;!&ndash;<a
       class="dropdown-item edit-profile-pic-link"
       (click)="onEditProfile()"
       translate
     ><i class="fa fa-fw fa-address-card"></i> chrome.editProfile</a
-    >-->
-    <!--<a
+    >&ndash;&gt;
+    &lt;!&ndash;<a
       class="dropdown-item edit-profile-pic-link"
       (click)="onEditProfilePic()"
       translate
     ><i class="fa fa-fw fa-user-circle"></i> chrome.editProfilePicture</a
-    >-->
-    <!-- <a
+    >&ndash;&gt;
+    &lt;!&ndash; <a
       class="dropdown-item edit-profile-pic-link"
       (click)="onRefreshToken()"
       translate
       ><i class="fa fa-fw fa-user-circle"></i> Refresh token</a
-    > -->
+    > &ndash;&gt;
     <div class="dropdown-divider"></div>
     <a class="dropdown-item logout-link" (click)="doLogout()" translate
     ><i class="fa fa-fw fa-power-off"></i> chrome.logout</a
     >
   </div>
 
-  </div>
+  </div>-->
 </nav>
 
