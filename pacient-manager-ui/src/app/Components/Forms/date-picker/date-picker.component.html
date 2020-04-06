@@ -1,0 +1,16 @@
+<div class="form-group row">
+  <label class="col-sm-4 col-form-label">{{label}}</label>
+  <div class="col-sm-8">
+    <input class="form-control picker-input"
+           [owlDateTime]="dt"
+           [placeholder]="placeholder"
+           [selectMode]="mode"
+           [readonly]="true"
+           (onChange)="updateDate($event)"
+           (dateTimeChange)="updateDate($event)"
+           [owlDateTimeTrigger]="dt">
+    <span [owlDateTimeTrigger]="dt" style="float: right;"><i class="fa fa-calendar"></i></span>
+    <owl-date-time #dt [pickerType]="'calendar'" ></owl-date-time>
+  </div>
+
+</div>

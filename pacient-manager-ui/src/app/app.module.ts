@@ -20,6 +20,9 @@ import { CheckboxComponent } from './Components/Forms/checkbox/checkbox.componen
 import { DropdownSelectorComponent } from './Components/Forms/dropdown-selector/dropdown-selector.component';
 import {HeaderComponent} from "./Components/header/header.component";
 import { BackButtonComponent } from './Components/back-button/back-button.component';
+import { DatePickerComponent } from './Components/Forms/date-picker/date-picker.component';
+import {OwlDateTimeModule} from 'ng-pick-datetime';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import { BackButtonComponent } from './Components/back-button/back-button.compon
     CheckboxSingleValueComponent,
     CheckboxComponent,
     DropdownSelectorComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    DatePickerComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,9 @@ import { BackButtonComponent } from './Components/back-button/back-button.compon
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Angular2PromiseButtonModule.forRoot()
+    Angular2PromiseButtonModule.forRoot(),
+    OwlDateTimeModule,
+    BrowserAnimationsModule
   ],
   providers: [
     PacientOverviewService,
