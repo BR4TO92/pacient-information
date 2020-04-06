@@ -21,7 +21,7 @@ export class DatePickerComponent implements OnInit {
   @Input() mode: DatePickerMode = DatePickerMode.SIMPLE;
 
   @Input() group: FormGroup;
-  @Input() controlName: string;
+  @Input() controlName: string; //numele string-ului de date din componenta
 
   constructor() { }
 

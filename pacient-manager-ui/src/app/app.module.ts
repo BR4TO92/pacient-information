@@ -23,6 +23,7 @@ import { BackButtonComponent } from './Components/back-button/back-button.compon
 import { DatePickerComponent } from './Components/Forms/date-picker/date-picker.component';
 import {OwlDateTimeModule} from 'ng-pick-datetime';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {OwlMomentDateTimeModule} from "ng-pick-datetime-moment";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     Angular2PromiseButtonModule.forRoot(),
     OwlDateTimeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    OwlMomentDateTimeModule
   ],
   providers: [
     PacientOverviewService,

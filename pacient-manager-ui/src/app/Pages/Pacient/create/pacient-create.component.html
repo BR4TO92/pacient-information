@@ -51,6 +51,12 @@
               </option>
             </app-dropdown-selector>
 
+            <app-date-picker [label]="'Date created'"
+                             [format]="dateTimeFormat"
+                             [group]="pacientForm"
+                             [controlName]="'dateCreated'">
+            </app-date-picker>
+
             <app-file-input [label]="'Sex'"
                             [name]="'pacientFile'"
                             [group]="pacientForm"

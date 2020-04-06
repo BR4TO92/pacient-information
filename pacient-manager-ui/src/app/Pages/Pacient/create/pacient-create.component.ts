@@ -5,6 +5,7 @@ import {PacientCreateService} from "./pacient-create.service";
 import {FormGroup} from "@angular/forms";
 import {PacientCreateFormBuilder} from "./pacient-create-form.builder";
 import {ValidationUtils} from "../../../utils/validation-utils";
+import {DateUtils} from "../../../Components/Forms/date-picker/date-utils";
 
 @Component({
   selector: 'app-pacient-form',
@@ -20,6 +21,7 @@ export class PacientCreateComponent implements OnInit {
   smokinkgStatusOptions: string[] = ['current', 'ex-smoker', 'non-smoker'];
   selectedSmokingStatus: string = 'non-smoker';
   smokingYearsOptions: Array<number> = new Array();
+  dateTimeFormat: string = DateUtils.DATE_TIME_FORMAT;
 
   constructor(private route: ActivatedRoute,
               private router: Router,

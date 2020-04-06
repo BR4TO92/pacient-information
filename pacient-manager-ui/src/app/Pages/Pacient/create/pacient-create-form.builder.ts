@@ -9,6 +9,7 @@ export class PacientCreateFormBuilder {
       age: new FormControl('', []),
       smokingStatus: new FormControl('', []),
       smokingYears: new FormControl('', []),
+      dateCreated: new FormControl('', []),
       pacientFile: new FormControl('', [])
     });
   }
