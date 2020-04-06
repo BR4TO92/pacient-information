@@ -56,38 +56,40 @@
       {{organisation}}
     </div>
   </div>
-  <!--<div class="nav-item dropdown" ngbDropdown>-->
-  <!--<a
-    href="javascript:void(0)"
+  <div class="nav-item dropdown" ngbDropdown>
+  <a
+    href="logout"
     class="nav-link remove-dropdown-toggle"
   >
-    <img class="profile-picture-button" [src]="pic" />
+    <!--<img class="profile-picture-button" [src]="pic" />-->
     <i class="fa fa-fw fa-angle-down"></i>
-  </a>-->
-  <!--<div class="dropdown-menu" ngbDropdownMenu>
-    <a
+  </a>
+
+  <div class="dropdown-menu" ngbDropdownMenu>
+    <!--<a
       class="dropdown-item edit-profile-pic-link"
       (click)="onEditProfile()"
       translate
     ><i class="fa fa-fw fa-address-card"></i> chrome.editProfile</a
-    >
-    <a
+    >-->
+    <!--<a
       class="dropdown-item edit-profile-pic-link"
       (click)="onEditProfilePic()"
       translate
     ><i class="fa fa-fw fa-user-circle"></i> chrome.editProfilePicture</a
-    >
-    &lt;!&ndash; <a
+    >-->
+    <!-- <a
       class="dropdown-item edit-profile-pic-link"
       (click)="onRefreshToken()"
       translate
       ><i class="fa fa-fw fa-user-circle"></i> Refresh token</a
-    > &ndash;&gt;
+    > -->
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item logout-link" (click)="onLoggedout()" translate
+    <a class="dropdown-item logout-link" (click)="doLogout()" translate
     ><i class="fa fa-fw fa-power-off"></i> chrome.logout</a
     >
-  </div>-->
-  <!--</div>-->
+  </div>
+
+  </div>
 </nav>
 
