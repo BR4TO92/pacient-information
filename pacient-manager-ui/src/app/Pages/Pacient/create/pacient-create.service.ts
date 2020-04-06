@@ -26,4 +26,12 @@ export class PacientCreateService {
     return this.httpClient.post<Pacient>("http://localhost:8080/api/pacients", formData, {headers: headers})
       .toPromise();
   }
+
+  public saveWithoutFile(pacient: Pacient) {
+    var headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    return this.httpClient.post<Pacient>("/api/pacients/newPacient", pacient, {headers: headers})
+      .toPromise();
+  }
 }

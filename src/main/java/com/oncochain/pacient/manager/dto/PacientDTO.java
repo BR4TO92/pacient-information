@@ -8,6 +8,7 @@ public class PacientDTO {
 	private String sex;
 
 	private String smokingStatus;
+	private int smokingYears;
 
 	public int getId() {
 		return id;
@@ -40,4 +41,12 @@ public class PacientDTO {
 	public String getSmokingStatus() { return smokingStatus; }
 
 	public void setSmokingStatus(String smokingStatus) { this.smokingStatus = smokingStatus; }
+
+	public int getSmokingYears() {
+		return smokingYears;
+	}
+
+	public void setSmokingYears(int smokingYears) {
+		this.smokingYears = smokingYears;
+	}
 }

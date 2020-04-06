@@ -7,4 +7,5 @@
 
     <include file="/db/changelog/changes/hospitals-changelog.xml"/>
     <include file="/db/changelog/changes/pacients-changelog.xml"/>
+    <include file="/db/changelog/changes/users-changelog.xml"/>
 </databaseChangeLog>

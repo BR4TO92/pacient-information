@@ -57,8 +57,9 @@ public class PacientService {
 		String name = pacientDTO.getName();
 		int age = pacientDTO.getAge();
 		String smokingStatus = pacientDTO.getSmokingStatus();
+		Integer smokingYears = pacientDTO.getSmokingYears();
 
-		return pacientRepository.save(new Pacient(id, name, age, sex, smokingStatus));
+		return pacientRepository.save(new Pacient(id, name, age, sex, smokingStatus, smokingYears));
 	}
 
 	public Pacient create(PacientDTO pacientDTO) {
@@ -67,8 +68,9 @@ public class PacientService {
 		int age = pacientDTO.getAge();
 		String sex = pacientDTO.getSex();
 		String smokingStatus = pacientDTO.getSmokingStatus();
+		Integer smokingYears = pacientDTO.getSmokingYears();
 
-		return pacientRepository.save(new Pacient(id, name, age, sex, smokingStatus));
+		return pacientRepository.save(new Pacient(id, name, age, sex, smokingStatus, smokingYears));
 	}
 
 	public Pacient update(String name, PacientDTO pacientDTO){
@@ -76,11 +78,13 @@ public class PacientService {
 		int newAge = pacientDTO.getAge();
 		String newSex = pacientDTO.getSex();
 		String newSmokingStatus = pacientDTO.getSmokingStatus();
+		Integer newSmokingYears = pacientDTO.getSmokingYears();
 		Pacient existentPacient = pacientRepository.findByName(name);
 		existentPacient.setName(newName);
 		existentPacient.setAge(newAge);
 		existentPacient.setSex(newSex);
 		existentPacient.setSmokingStatus(newSmokingStatus);
+		existentPacient.setSmokingYears(newSmokingYears);
 
 		return pacientRepository.save(existentPacient);
 	}

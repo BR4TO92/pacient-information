@@ -15,8 +15,11 @@ export class PacientCreateComponent implements OnInit {
   pacient: Pacient;
   pacientForm: FormGroup = new PacientCreateFormBuilder().build();
   submitPromise: Promise<Pacient>;
-  smokinkgOptions: string[] = ['current', 'ex-smoker', 'non-smoker'];
-  selectedValue: string = 'non-smoker';
+  genderOptions: string[] = ['male', 'female'];
+  selectedGender: string = 'male';
+  smokinkgStatusOptions: string[] = ['current', 'ex-smoker', 'non-smoker'];
+  selectedSmokingStatus: string = 'non-smoker';
+  smokingYearsOptions: Array<number> = new Array();
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -24,12 +27,21 @@ export class PacientCreateComponent implements OnInit {
     this.pacient = new Pacient();
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.getSmokingYears(this.smokingYearsOptions);
+  }
+
+  getSmokingYears(smokingYears: Array<number>) {
+    for (var year = 1; year <= 70; year++) {
+      smokingYears.push(year);
+    }
+  }
 
   onSubmit() {
     if(this.pacientForm.valid) {
       const formData: FormData = new FormData();
-      this.pacientForm.value.smokingStatus = this.selectedValue;
+      this.pacientForm.value.sex = this.selectedGender;
+      this.pacientForm.value.smokingStatus = this.selectedSmokingStatus;
       formData.append('pacientFile', <File>this.pacientForm.value.pacientFile);
       formData.append('newPacient', new Blob([JSON.stringify(this.pacientForm.value)], {type: "application/json"}));
 
@@ -40,5 +52,18 @@ export class PacientCreateComponent implements OnInit {
       ValidationUtils.markFormAsDirty(this.pacientForm);
     }
   }
+
+  /*onSubmit() {
+    if(this.pacientForm.valid) {
+      this.pacientForm.value.sex = this.selectedGender;
+      this.pacientForm.value.smokingStatus = this.selectedSmokingStatus;
+
+      this.submitPromise = this.pacientCreateService.saveWithoutFile(this.pacientForm.value);
+    }
+
+    else {
+      ValidationUtils.markFormAsDirty(this.pacientForm);
+    }
+  }*/
 
 }

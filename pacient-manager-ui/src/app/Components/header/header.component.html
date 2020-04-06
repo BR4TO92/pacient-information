@@ -1,14 +1,93 @@
-<header>
+<!--<header>
   <nav class="navbar navbar-dark bg-dark">
     <div><a href="https://www.oncochain.com/" class="navbar-brand">OncoChain</a></div>
     <ul class="navbar-nav navbar-right">
       <li><a routerLink="/pacients" class="nav-link text-white">List Pacients</a></li>
     </ul>
     <ul class="navbar-nav navbar-right">
-      <li><a routerLink="/pacients/create" class="nav-link text-white">Add Pacient</a></li>
+      <li><a routerLink="/addPacient" class="nav-link text-white">Add Pacient</a></li>
     </ul>
     <ul class="navbar-nav navbar-right">
       <li><a class="nav-link" href="/logout" (click)=doLogout()>Logout</a></li>
     </ul>
   </nav>
-</header>
+</header>-->
+
+
+
+<nav class="panel navbar-header">
+  <a class="navbar-brand textnowrap">
+    <img src="/assets/images/logo.png" />
+    <span class="company-name">ONCOCHAIN</span>
+  </a>
+  <div class="search-wrapper">
+    <!--<i class="fa fa-search"></i>-->
+    <!--<input
+      type="text"
+      [placeholder]="'placeholder...'"
+    />-->
+  </div>
+  <button class="btn not-implemented">
+    <i class="fa fa-envelope-open"></i>
+  </button>
+  <button class="btn not-implemented">
+    <i class="fa fa-bell"></i>
+  </button>
+  <!--<button class="btn big-add-button not-implemented">
+    +
+  </button>-->
+  <!--<div >Bla</div>
+  <div >Bla</div>-->
+  <!--<div class="wrap">
+    <div class = "blocks">
+      Dr. Serban Negru
+    </div>
+
+    <div class = "blocks">
+      Oncohelp
+    </div>
+  </div>-->
+  <span>|</span>
+  <div class="wrap">
+    <div class = "blocks">
+      {{completeUserName}}
+    </div>
+    <div class = "blocks" style="color: #d64cc9">
+      {{organisation}}
+    </div>
+  </div>
+  <!--<div class="nav-item dropdown" ngbDropdown>-->
+  <!--<a
+    href="javascript:void(0)"
+    class="nav-link remove-dropdown-toggle"
+  >
+    <img class="profile-picture-button" [src]="pic" />
+    <i class="fa fa-fw fa-angle-down"></i>
+  </a>-->
+  <!--<div class="dropdown-menu" ngbDropdownMenu>
+    <a
+      class="dropdown-item edit-profile-pic-link"
+      (click)="onEditProfile()"
+      translate
+    ><i class="fa fa-fw fa-address-card"></i> chrome.editProfile</a
+    >
+    <a
+      class="dropdown-item edit-profile-pic-link"
+      (click)="onEditProfilePic()"
+      translate
+    ><i class="fa fa-fw fa-user-circle"></i> chrome.editProfilePicture</a
+    >
+    &lt;!&ndash; <a
+      class="dropdown-item edit-profile-pic-link"
+      (click)="onRefreshToken()"
+      translate
+      ><i class="fa fa-fw fa-user-circle"></i> Refresh token</a
+    > &ndash;&gt;
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item logout-link" (click)="onLoggedout()" translate
+    ><i class="fa fa-fw fa-power-off"></i> chrome.logout</a
+    >
+  </div>-->
+  <!--</div>-->
+</nav>
+

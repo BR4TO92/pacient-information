@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {map} from "rxjs/operators";
+import {User} from "../header/user";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,10 @@ export class AuthenticationService {
   password: String;
 
   constructor(private http: HttpClient) {}
+
+  retrieveDetails() {
+    return this.http.get<User>("http://localhost:8080/user/logged").toPromise();
+  }
 
   authenticate(username: String, password: String) {
     return this.http.get(`http://localhost:8080/auth`, {

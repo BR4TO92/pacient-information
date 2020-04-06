@@ -18,21 +18,26 @@ public class Pacient {
 	@Column(name = "smoking_status")
 	private String smokingStatus;
 
+	@Column(name = "smoking_years")
+	private Integer smokingYears;
+
 	public Pacient() {}
 
-	public Pacient(String name, int age, String sex, String smokingStatus) {
+	public Pacient(String name, int age, String sex, String smokingStatus, Integer smokingYears) {
 		this.name = name;
 		this.age = age;
 		this.sex = sex;
 		this.smokingStatus = smokingStatus;
+		this.smokingYears = smokingYears;
 	}
 
-	public Pacient(int id, String name, int age, String sex, String smokingStatus) {
+	public Pacient(int id, String name, int age, String sex, String smokingStatus, Integer smokingYears) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.sex = sex;
 		this.smokingStatus = smokingStatus;
+		this.smokingYears = smokingYears;
 	}
 
 	public int getId() {
@@ -66,4 +71,12 @@ public class Pacient {
 	public String getSmokingStatus() { return smokingStatus; }
 
 	public void setSmokingStatus(String smokingStatus) { this.smokingStatus = smokingStatus; }
+
+	public Integer getSmokingYears() {
+		return smokingYears;
+	}
+
+	public void setSmokingYears(Integer smokingYears) {
+		this.smokingYears = smokingYears;
+	}
 }

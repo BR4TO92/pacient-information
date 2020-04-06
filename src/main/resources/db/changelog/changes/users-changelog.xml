@@ -6,33 +6,24 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <changeSet id="structural-2.0" author="daniel.bratosin">
-        <createTable tableName="pacients">
+    <changeSet id="structural-3.0" author="daniel.bratosin">
+        <createTable tableName="users">
             <column name="id" type="INT">
-                <constraints primaryKey="true" primaryKeyName="pkey_pacients_id"/>
+                <constraints primaryKey="true" primaryKeyName="pkey_users_id"/>
             </column>
-            <column name="name" type="VARCHAR(40)">
+            <column name="user_name" type="VARCHAR(40)">
                 <constraints nullable="false"/>
             </column>
-            <column name="age" type="INT">
+            <column name="first_name" type="VARCHAR(40)">
                 <constraints nullable="false"/>
             </column>
-            <column name="sex" type="VARCHAR(8)">
+            <column name="last_name" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="organisation" type="VARCHAR(40)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
-    </changeSet>
-
-    <changeSet id="structural-2.1" author="daniel.bratosin">
-        <addColumn tableName="pacients">
-            <column name="smoking_status" type="VARCHAR(25)"/>
-        </addColumn>
-    </changeSet>
-
-    <changeSet id="structural-2.2" author="daniel.bratosin">
-        <addColumn tableName="pacients">
-            <column name="smoking_years" type="INT"/>
-        </addColumn>
     </changeSet>
 
 </databaseChangeLog>

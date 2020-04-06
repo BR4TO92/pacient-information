@@ -30,10 +30,26 @@
                             [group]="pacientForm">
             </app-text-input>
 
+            <!--<app-checkbox-single-value [label]="'Gender'"
+                                       [options]=genderOptions
+                                       [(selectedValue)]=selectedGender>
+            </app-checkbox-single-value>-->
+
             <app-checkbox-single-value [label]="'Smoking'"
-                                       [options]=smokinkgOptions
-                                       [(selectedValue)]=selectedValue>
+                                       [options]=smokinkgStatusOptions
+                                       [(selectedValue)]=selectedSmokingStatus>
             </app-checkbox-single-value>
+
+            <app-dropdown-selector [label]="'Smoking Years'"
+                            [name]="'smokingYears'"
+                            [group]="pacientForm"
+                            [controlName]="'smokingYears'">
+              <option [value]="''">Years</option>
+              <option [value]="smokingYears"
+                      *ngFor="let smokingYears of smokingYearsOptions">
+                {{smokingYears}}
+              </option>
+            </app-dropdown-selector>
 
             <app-file-input [label]="'Sex'"
                             [name]="'pacientFile'"
@@ -41,7 +57,7 @@
                             [controlName]="'pacientFile'">
             </app-file-input>
 
-            selectedValue = {{ selectedValue }}
+            selectedSmokingStatus = {{ selectedSmokingStatus }}
 
             <button [promiseBtn]="submitPromise"
                     class="btn btn-info">Submit</button>
