@@ -24,6 +24,8 @@ import { DatePickerComponent } from './Components/Forms/date-picker/date-picker.
 import {OwlDateTimeModule} from 'ng-pick-datetime';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {OwlMomentDateTimeModule} from "ng-pick-datetime-moment";
+import { SearchInputComponent } from './Components/Forms/search-input/search-input.component';
+import { FilterPipe } from './Components/Forms/search-input/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {OwlMomentDateTimeModule} from "ng-pick-datetime-moment";
     CheckboxComponent,
     DropdownSelectorComponent,
     BackButtonComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    SearchInputComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

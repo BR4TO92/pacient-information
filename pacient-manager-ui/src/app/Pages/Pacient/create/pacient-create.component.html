@@ -35,6 +35,13 @@
                                        [(selectedValue)]=selectedGender>
             </app-checkbox-single-value>-->
 
+            <app-search-input [label]="'Disease'"
+                              [options]=diseaseOptions
+                              [model]="pacient.disease"
+                              [group]="pacientForm"
+                              [controlName]="'disease'">
+            </app-search-input>
+
             <app-checkbox-single-value [label]="'Smoking'"
                                        [options]=smokinkgStatusOptions
                                        [(selectedValue)]=selectedSmokingStatus>
@@ -63,7 +70,7 @@
                             [controlName]="'pacientFile'">
             </app-file-input>
 
-            selectedSmokingStatus = {{ selectedSmokingStatus }}
+            <!--selectedSmokingStatus = {{ selectedSmokingStatus }}-->
 
             <button [promiseBtn]="submitPromise"
                     class="btn btn-info">Submit</button>

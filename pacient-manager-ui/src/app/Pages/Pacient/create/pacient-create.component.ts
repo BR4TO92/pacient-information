@@ -20,6 +20,7 @@ export class PacientCreateComponent implements OnInit {
   selectedGender: string = 'male';
   smokinkgStatusOptions: string[] = ['current', 'ex-smoker', 'non-smoker'];
   selectedSmokingStatus: string = 'non-smoker';
+  diseaseOptions: string[] = ['first', 'second', 'third'];
   smokingYearsOptions: Array<number> = new Array();
   dateTimeFormat: string = DateUtils.DATE_TIME_FORMAT;
 
@@ -42,7 +43,7 @@ export class PacientCreateComponent implements OnInit {
   onSubmit() {
     if(this.pacientForm.valid) {
       const formData: FormData = new FormData();
-      this.pacientForm.value.sex = this.selectedGender;
+      /*this.pacientForm.value.sex = this.selectedGender;*/
       this.pacientForm.value.smokingStatus = this.selectedSmokingStatus;
       formData.append('pacientFile', <File>this.pacientForm.value.pacientFile);
       formData.append('newPacient', new Blob([JSON.stringify(this.pacientForm.value)], {type: "application/json"}));

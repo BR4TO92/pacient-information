@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
       .then(
         (data: any) => this.loggedUser = data,
       );
+    console.log("loggedUser: " + this.loggedUser);
     this.firstName = this.loggedUser.firstName;
     this.lastName = this.loggedUser.lastName;
     this.organisation = this.loggedUser.organisation;

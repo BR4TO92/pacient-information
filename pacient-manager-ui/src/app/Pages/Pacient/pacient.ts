@@ -7,4 +7,5 @@ export class Pacient {
   smokingStatus: string;
   smokingYears: number;
   dateCreated: string;
+  disease: string;
 }
