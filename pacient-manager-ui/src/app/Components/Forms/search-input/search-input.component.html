@@ -4,6 +4,6 @@
     <input type="search" [(ngModel)]="model" [formControlName]="controlName" placeholder="Search text" class="form-control search-wrapper">
   </div>
 </div>
-<ul class="search-result">
-  <li  *ngFor="let data of options | filter: model">{{data}}</li>
+<ul class="search-result" *ngIf="model && model.length">
+  <li *ngFor="let data of options | filter: model">{{data}}</li>
 </ul>
