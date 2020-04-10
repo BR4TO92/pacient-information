@@ -17,4 +17,8 @@ export class SearchInputComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSelect(data: string): void {
+    this.model = data;
+  }
+
 }
