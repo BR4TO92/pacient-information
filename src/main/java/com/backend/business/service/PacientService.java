@@ -1,8 +1,8 @@
-package com.oncochain.pacient.manager.service;
+package com.backend.business.service;
 
-import com.oncochain.pacient.manager.dto.PacientDTO;
-import com.oncochain.pacient.manager.model.Pacient;
-import com.oncochain.pacient.manager.repository.PacientRepository;
+import com.backend.business.repository.PacientRepository;
+import com.backend.business.dto.PacientDTO;
+import com.backend.business.model.Pacient;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.springframework.beans.factory.annotation.Autowired;

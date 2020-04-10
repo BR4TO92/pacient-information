@@ -1,4 +1,4 @@
-package com.oncochain.pacient.manager.dto;
+package com.backend.business.dto;
 
 public class UserDTO {
 

@@ -11,14 +11,16 @@ export class SearchInputComponent implements OnInit {
   @Input() model: string;
   @Input() controlName: string;
   @Input() options: string[];
+  isEnabled: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSelect(data: string): void {
-    this.model = data;
+  handleClick(option) {
+    this.model = option;
+    this.isEnabled = false;
   }
 
 }

@@ -1,4 +1,4 @@
-package com.oncochain.pacient.manager.configuration;
+package com.backend.business.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

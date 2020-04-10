@@ -1,8 +1,7 @@
-package com.oncochain.pacient.manager.controller;
+package com.backend.business.controller;
 
-import com.oncochain.pacient.manager.model.User;
-import com.oncochain.pacient.manager.repository.PacientRepository;
-import com.oncochain.pacient.manager.repository.UserRepository;
+import com.backend.business.model.User;
+import com.backend.business.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

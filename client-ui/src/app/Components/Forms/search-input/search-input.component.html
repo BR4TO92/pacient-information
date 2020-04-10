@@ -5,5 +5,7 @@
   </div>
 </div>
 <ul *ngIf="model && model.length">
-  <li *ngFor="let data of options | filter: model" (click)="onSelect(data)">{{data}}</li>
+  <li *ngFor="let option of options | filter: model">
+    <button (click)="handleClick(option)">{{option}}</button>
+  </li>
 </ul>

@@ -1,7 +1,6 @@
-package com.oncochain.pacient.manager.repository;
+package com.backend.business.repository;
 
-import com.oncochain.pacient.manager.model.Pacient;
-import com.oncochain.pacient.manager.model.User;
+import com.backend.business.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

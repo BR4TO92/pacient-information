@@ -1,4 +1,4 @@
-package com.oncochain.pacient.manager.model;
+package com.backend.business.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
